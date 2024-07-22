@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages{
-    stage('First Stage'){
+    stage('Build'){
       steps{
-        sh 'echo hello world'
+        sh 'sudo npm install'
+      }      
+    }
+
+    stage('Deploy'){
+      steps{
+        sh 'sudo npm run start:dev'
       }      
     }
 
