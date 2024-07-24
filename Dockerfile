@@ -1,14 +1,8 @@
 FROM node:9
 
 WORKDIR /app
-
-RUN npm install -g contentful-cli
-
-COPY package.json .
-RUN npm install
-
 COPY . .
-
+RUN npm install
 USER node
 EXPOSE 3000
 
