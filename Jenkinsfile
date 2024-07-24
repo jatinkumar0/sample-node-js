@@ -3,13 +3,13 @@ pipeline {
   stages{
     stage('Build'){
       steps{
-        sh 'sudo npm install -g'
+        sh 'sudo npm install'
       }      
     }
 
     stage('Deploy'){
       steps{
-        sh 'npm run start:dev'
+        sh 'sudo npm run start:dev'
       }      
     }
 
