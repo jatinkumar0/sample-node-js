@@ -3,14 +3,13 @@ pipeline {
   stages{
     stage('Build'){
       steps{
-        sh 'sudo npm install'
+        sh 'sudo docker build -t maqdoom:v1 .'
       }      
     }
 
     stage('Deploy'){
       steps{
-        sh 'sudo pm2 delete all'
-        sh 'sudo pm2 start bin/www'
+        sh 'sudo docker run -itd -p 3000:3000 maqdoom:v1'
       }      
     }
 
